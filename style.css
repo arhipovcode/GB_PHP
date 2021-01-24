@@ -5,6 +5,7 @@ body {
   background-color: rgb(209, 248, 255);
 }
 .title {
+  color: #380c0c;
   max-width: 800px;
   font-size: 20px;
   font-weight: 900;

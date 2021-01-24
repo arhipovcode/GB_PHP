@@ -72,7 +72,32 @@
     }
   }
 
+  
+  // Функция рекурсия
+  function power($val, $pow) {
+    if($pow) {
+      return $val * power($val, $pow-1);
+    }
+    return 1;
+  }
 
+  // Функция получения склонения
+  function getAnswerHour($hour) {
+    if($hour > 4 && $hour < 21) {
+      return ' часов';
+    } elseif($hour % 10 > 1 && $hour % 10 < 5) {
+      return ' часа';
+    }
+  }
+  function getAnswerMin($min) {
+    if($min % 10 === 1 && $min != 11) {
+      return ' минута';
+    } elseif($min % 10 > 1 && $min % 10 < 5 && $min < 5 || $min % 10 > 1 && $min % 10 < 5 && $min > 21) {
+      return ' минуты';
+    } elseif($min >= 5 && $min <= 20 || $min % 10 > 4 && $min % 10 <= 9 || $min % 10 === 0) {
+      return ' минут';
+    } 
+  }
 ?>
 
 
@@ -238,13 +263,30 @@
   </div>
 
   <h2 class="title"><?= $task_4 ?></h2>
-  <h2 class="title"><?= $task_5 ?></h2>
-  <h2 class="title"><?= $task_6 ?></h2>
+  <div class="task-wrap">
+    <div class="task">
+      <div class="result"><strong>Текущая дата: </strong> <?= date("d. m. Y")?></div>
+    </div>
+  </div>
 
-  <p class="subtitle">
-    22 часа 15 минут<br>
-    21 час 43 минуты
-  </p>
+  <h2 class="title"><?= $task_5 ?></h2>
+  <div class="task-wrap">
+    <div class="task">
+      <div>Переданно число: 3</div>
+      <div class="result"><strong>Результат: </strong> <?= power(3, 3) ?></div>
+    </div>
+  </div>
+
+  <h2 class="title"><?= $task_6 ?></h2>
+  <div class="task-wrap">
+    <div class="task">
+      <div class="result"><strong>Текущее время: </strong> 
+        <?= date("H") . getAnswerHour(date("H")) ?>
+        <?= date("i") . getAnswerMin(date("i")) ?>
+      </div>
+    </div>
+  </div>
+
 
   <footer class="title"><?= date("d. m. Y")?> год <?= date("M") ?></footer>
 </div>
