@@ -217,7 +217,7 @@
 
     <div class="task">
       <div>Переданные числа: <?= $f ?> и <?= $t ?></div>
-      <div class="result"><strong>Ответ: </strong> Когда разныз знаков: <?= $result ?></div>
+      <div class="result"><strong>Ответ: </strong> Когда разных знаков: <?= $result ?></div>
     </div>
   </div>
 
