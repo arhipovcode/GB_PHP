@@ -56,8 +56,10 @@
   }
 
   // Task - 4
-  function getWordTranslitor($letter, $endLetter = '') {
+  function getWordTranslitor($letter) {
+    $result = '';
     // массив из букв
+    
     $transliteration = [
       'а' => 'a',
       'б' => 'b',
@@ -93,22 +95,29 @@
     // цикл, который пробегается по массиву с буквами и сравнивает значения
     foreach($transliteration as $key => $value) {
       if($key == $letter) {
-        echo $value;
+        $result .= $value;
+      } elseif ($letter == '_') {
+        $result .= '_';
       } elseif ($letter == ' ') {
-        echo ' ';
+        $result .= ' ';
       }
     }
+    
+    return $result;
   }
 
   function translitor($str) {
+    $result = '';
     // переводим слово в маленькие буквы
     $str = mb_strtolower($str);
     // переводим полученное слово в массив из букв
     $letterArr = preg_split('//u', $str, 0, PREG_SPLIT_NO_EMPTY);
     // запускаем цикл и передаем каждую букву в функцую на сравнение значений
     foreach($letterArr as $val) {
-      getWordTranslitor($val);
+      $result .= getWordTranslitor($val);
     }
+    
+     return $result;
   }
   // запускаем функцию и передаем слово на русском языке
   translitor('Мой РезуЛьтаТ');
@@ -117,19 +126,20 @@
   function replaceSpace($word) {
     $result = '';
     $word = mb_strtolower($word);
-
+    
     $letterArr = preg_split('//u', $word, 0, PREG_SPLIT_NO_EMPTY);
-
+    
     foreach($letterArr as $value) {
-      if($value == ' ') {
+      if($value == ' ' || $value == '_') {
         $result .= '_';
       } else {
         $result .= $value;
       }
     }
-    echo '<br>' . '<br>' . $result . '<br>' . '<br>';
+    // echo '<br>' . '<br>' . $result . '<br>' . '<br>';
+    return $result;
   }
-  replaceSpace('Заменить пробелы на подчеркивания');
+  // replaceSpace('Заменить пробелы на подчеркивания');
 
   // Task - 7
   for ($i = 0; $i < 10; print_r($i++)){}
@@ -138,7 +148,7 @@
   function getCitiesFilter(string $str, $regions) {
     echo '<br>';
     echo '<br>';
-    
+
     foreach($regions as $value) {
       if(is_array($value)) {
         foreach($value as $val) {
@@ -150,6 +160,16 @@
     }
   }
   getCitiesFilter('К', $regions);
+
+  // Task - 9
+  function getTranslitAndReplaceSpace($word) {
+    $translit = translitor($word);
+    
+    $result = replaceSpace($translit);
+    echo '<br>' . $result;
+    // echo '<br>' . $translit;
+  }
+  getTranslitAndReplaceSpace('не пойму почему так');
 ?>
 
 <!DOCTYPE html>
