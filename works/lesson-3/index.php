@@ -139,7 +139,7 @@
     // echo '<br>' . '<br>' . $result . '<br>' . '<br>';
     return $result;
   }
-  // replaceSpace('Заменить пробелы на подчеркивания');
+  replaceSpace('Заменить пробелы на подчеркивания');
 
   // Task - 7
   for ($i = 0; $i < 10; print_r($i++)){}
