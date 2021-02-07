@@ -43,12 +43,16 @@ li {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
-.image {
+.image-block {
     max-width: 30%;
+    height: 200px;
+    overflow: hidden;
     cursor: pointer;
+    margin-bottom: 20px;
 }
-.image img {
+.image-block img {
     width: 100%;
 }
 .modal {
@@ -99,8 +103,8 @@ li {
     position: relative;
     border-radius: 8px;
     overflow: hidden;
-    width: 500px;
-    height: 450px;
+    width: 700px;
+    height: 650px;
 }
 .modal-image img {
     width: 100%;

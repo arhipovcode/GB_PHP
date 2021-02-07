@@ -3,6 +3,7 @@ include_once __DIR__ . "/../config/main.php";
 include ENGINE_DIR . 'renderMenu.php';
 include ENGINE_DIR . 'footerMenu.php';
 include ENGINE_DIR . 'getImage.php';
+include_once '../db/db.php';
 
 ?>
 
@@ -30,8 +31,19 @@ include ENGINE_DIR . 'getImage.php';
     <main class="main">
         <div class="container">
             <div class="images-wrapper">
-                <?= getImages(); ?>
+
+                    <?php
+                    if($result_images) {
+                        while($row = mysqli_fetch_assoc($result_images)) {
+                            echo "<div class='image-block'>
+                                    <img src='img/{$row['name_img']}.jpg'>
+                                 </div>";
+                        }
+                    };
+                    ?>
+
             </div>
+
         </div>
     </main>
 
