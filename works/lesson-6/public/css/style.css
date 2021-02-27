@@ -1,0 +1,211 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.header,
+.footer{
+    background-color: #e3d18c;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+}
+ul {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+li {
+    display: inline-block;
+    list-style-type: none;
+    text-transform: uppercase;
+    color: #380c0c;
+}
+.menu-link {
+    text-decoration: none;
+    color: #223428;
+    transition: 0.5s;
+}
+.menu-link:hover {
+    color: #7a5252;
+}
+.main {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    min-height: calc(100vh - 120px);
+    background-color: #ccdae0;
+}
+
+.main-form {
+    margin-bottom: 50px;
+}
+
+.images-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.image-block {
+    max-width: 30%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+.vision-images {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.vision-images img {
+    width: 1000px;
+    height: 750px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #ccdae0;
+}
+.views-count {
+    position: absolute;
+    left: 50%;
+    top: 0px;
+    transform: translateX(-50%);
+    color: aliceblue;
+}
+.image-block img {
+    width: 100%;
+}
+.modal {
+    display: none;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+}
+.modal-closed {
+    position: absolute;
+    cursor: pointer;
+    width: 26px;
+    height: 26px;
+    top: 12px;
+    right: 10px;
+    padding: 5px;
+    transition: 0.2s;
+}
+.modal-closed span {
+    position: absolute;
+    display: block;
+    transform: rotate(45deg);
+    top: 50%;
+    left: 0;
+    width: 20px;
+    height: 3px;
+    border-radius: 2px;
+    background: #d77777;
+    transition: 0.5s;
+}
+.modal-closed:hover {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+}
+.modal-closed span:last-child {
+    transform: rotate(135deg);
+}
+.modal-image {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 700px;
+    height: 650px;
+}
+.modal-image img {
+    width: 100%;
+    height: inherit;
+}
+.show {
+    display: flex;
+}
+.products {
+    margin-top: 100px;
+    text-align: center;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.product-block {
+    box-shadow: 0 0 5px #291e1e;
+    border-radius: 10px;
+    padding: 10px 12px;
+    margin: 0 auto 20px;
+}
+.product-image,
+.good-image{
+    border-radius: 10px;
+    overflow: hidden;
+}
+.product-title {
+    font-size: 20px;
+    text-transform: uppercase;
+    color: darkslategrey;
+}
+.product-link {
+    display: inline-block;
+    margin-top: 30px;
+    text-decoration: none;
+    color: #380c0c;
+    font-size: 18px;
+    padding: 10px 12px;
+    box-shadow: 0 0 5px #2f2323;
+    border-radius: 8px;
+    background-color: #fff;
+}
+.vision-product {
+    background-color: #3d6666;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #433b3b;
+}
+.good-block {
+    margin-top: 100px;
+    box-shadow: 0 0 10px #2f1717;
+    border-radius: 10px;
+    max-width: 400px;
+    padding: 15px 25px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.good-image img {
+    width: 100%;
+}
+.good-title {
+    font-size: 24px;
+    margin: 20px 0;
+}
